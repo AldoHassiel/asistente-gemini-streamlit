@@ -46,7 +46,7 @@ if (
     st.session_state.client = genai.Client(api_key=api_key)
     st.session_state.current_api_key = api_key
     st.session_state.chat_session = st.session_state.client.chats.create(
-        model="gemini-3.5-flash", config=CONFIG_INSTRUCCIONES
+        model="gemini-2.5", config=CONFIG_INSTRUCCIONES
     )
 
 # Historial gráfico de mensajes
@@ -66,7 +66,7 @@ with st.sidebar:
     st.markdown("Modelo backend: **Gemini 3.8 Flash**")
     if st.button("🧹 Limpiar Conversación"):
         st.session_state.chat_session = st.session_state.client.chats.create(
-            model="gemini-3.5-flash", config=CONFIG_INSTRUCCIONES
+            model="gemini-2.5", config=CONFIG_INSTRUCCIONES
         )
         st.session_state.messages = [
             {
